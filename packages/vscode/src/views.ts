@@ -7,6 +7,7 @@ import { Range, ThemeColor, ThemeIcon, TreeItem, TreeItemCollapsibleState, Uri, 
 import { flagIcon } from './flags'
 import { commands } from './generated/meta'
 import { projectFor } from './model/client'
+import { l10n } from './model/l10n'
 import { fileItems, keyTree, progressItems, reviewItems, usageReportItems } from './model/tree'
 
 interface ItemNode extends TreeViewNode {
@@ -33,7 +34,7 @@ async function treeItem(item: Item): Promise<TreeItem> {
   if (item.location) {
     const { start, end } = item.location.range
     treeItem.command = {
-      title: 'Open',
+      title: l10n.t('Open'),
       command: 'vscode.open',
       arguments: [
         Uri.parse(item.location.uri),
@@ -45,7 +46,7 @@ async function treeItem(item: Item): Promise<TreeItem> {
   }
   else if (item.openKey) {
     treeItem.command = {
-      title: 'Open in UI',
+      title: l10n.t('Open in UI'),
       command: commands.openKey,
       arguments: [item.openKey],
     }
