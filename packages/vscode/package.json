@@ -73,7 +73,7 @@
         "command": "x18n.setLanguage",
         "title": "%command.setLanguage%",
         "category": "x18n",
-        "icon": "$(whole-word)"
+        "icon": "$(symbol-text)"
       },
       {
         "command": "x18n.editKey",
