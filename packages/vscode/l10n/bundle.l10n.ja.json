@@ -71,5 +71,10 @@
   "x18n: {0} has i18n-ally settings and no x18n config.": "x18n: {0} には i18n-ally の設定があり、x18n の設定がありません。",
   "{0} · {1} translated": "{0} · {1} 翻訳済み",
   "Same as VS Code": "VS Code と同じ",
-  "Language of x18n's views, pickers and messages": "x18n のビュー、ピッカー、メッセージの言語"
+  "Language of x18n's views, pickers and messages": "x18n のビュー、ピッカー、メッセージの言語",
+  "Current File": "現在のファイル",
+  "Progress": "進捗",
+  "Keys": "キー",
+  "Usage Report": "使用状況レポート",
+  "Reviews": "レビュー"
 }

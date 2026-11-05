@@ -71,5 +71,10 @@
   "x18n: {0} has i18n-ally settings and no x18n config.": "x18n: {0} içinde i18n-ally ayarları var ama x18n yapılandırması yok.",
   "{0} · {1} translated": "{0} · {1} çevrildi",
   "Same as VS Code": "VS Code ile aynı",
-  "Language of x18n's views, pickers and messages": "x18n'in görünümlerinin, seçicilerinin ve mesajlarının dili"
+  "Language of x18n's views, pickers and messages": "x18n'in görünümlerinin, seçicilerinin ve mesajlarının dili",
+  "Current File": "Geçerli dosya",
+  "Progress": "İlerleme",
+  "Keys": "Anahtarlar",
+  "Usage Report": "Kullanım raporu",
+  "Reviews": "İncelemeler"
 }

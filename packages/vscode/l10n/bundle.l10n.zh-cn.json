@@ -71,5 +71,10 @@
   "x18n: {0} has i18n-ally settings and no x18n config.": "x18n: {0} 有 i18n-ally 设置，但没有 x18n 配置。",
   "{0} · {1} translated": "{0} · 已翻译 {1}",
   "Same as VS Code": "与 VS Code 相同",
-  "Language of x18n's views, pickers and messages": "x18n 的视图、选择器和消息所用的语言"
+  "Language of x18n's views, pickers and messages": "x18n 的视图、选择器和消息所用的语言",
+  "Current File": "当前文件",
+  "Progress": "进度",
+  "Keys": "键",
+  "Usage Report": "引用报告",
+  "Reviews": "审阅"
 }

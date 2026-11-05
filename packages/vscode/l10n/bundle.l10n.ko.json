@@ -71,5 +71,10 @@
   "x18n: {0} has i18n-ally settings and no x18n config.": "x18n: {0}에 i18n-ally 설정이 있고 x18n 설정이 없습니다.",
   "{0} · {1} translated": "{0} · {1} 번역됨",
   "Same as VS Code": "VS Code와 동일",
-  "Language of x18n's views, pickers and messages": "x18n의 뷰, 선택기, 메시지 언어"
+  "Language of x18n's views, pickers and messages": "x18n의 뷰, 선택기, 메시지 언어",
+  "Current File": "현재 파일",
+  "Progress": "진행률",
+  "Keys": "키",
+  "Usage Report": "사용 보고서",
+  "Reviews": "리뷰"
 }

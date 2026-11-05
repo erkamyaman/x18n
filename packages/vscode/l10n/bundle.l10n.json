@@ -71,5 +71,10 @@
   "x18n: {0} has i18n-ally settings and no x18n config.": "x18n: {0} has i18n-ally settings and no x18n config.",
   "{0} · {1} translated": "{0} · {1} translated",
   "Same as VS Code": "Same as VS Code",
-  "Language of x18n's views, pickers and messages": "Language of x18n's views, pickers and messages"
+  "Language of x18n's views, pickers and messages": "Language of x18n's views, pickers and messages",
+  "Current File": "Current File",
+  "Progress": "Progress",
+  "Keys": "Keys",
+  "Usage Report": "Usage Report",
+  "Reviews": "Reviews"
 }

@@ -85,7 +85,7 @@ export function useViews(x18n: X18nClient, refresh: Event<void>): void {
     return load().then(items => items.map(toNode), () => [])
   }
 
-  useTreeView('x18n.currentFile', () => {
+  const currentFile = useTreeView('x18n.currentFile', () => {
     void revision.value
     void fileRevision.value
     const document = editor.value?.document
@@ -98,15 +98,23 @@ export function useViews(x18n: X18nClient, refresh: Event<void>): void {
     ])
       .then(([result, projects]) => fileItems(uri, projectFor(projects, document.uri.fsPath)?.name, result).map(toNode), () => [])
   })
-  useTreeView('x18n.progress', roots(async () => {
+  const progress = useTreeView('x18n.progress', roots(async () => {
     const [progress, projects] = await Promise.all([
       x18n.request('x18n/progress', undefined),
       x18n.request('x18n/projects', undefined),
     ])
     return progressItems(progress, projects)
   }))
-  useTreeView('x18n.keys', roots(() => keyTree(x18n)))
-  useTreeView('x18n.usageReport', roots(async () => usageReportItems(await x18n.request('x18n/usageReport', undefined))))
-  useTreeView('x18n.reviews', roots(async () => reviewItems(await x18n.request('x18n/reviews', { open: true }))))
+  const keys = useTreeView('x18n.keys', roots(() => keyTree(x18n)))
+  const usageReport = useTreeView('x18n.usageReport', roots(async () => usageReportItems(await x18n.request('x18n/usageReport', undefined))))
+  const reviews = useTreeView('x18n.reviews', roots(async () => reviewItems(await x18n.request('x18n/reviews', { open: true }))))
   watch(editor, () => fileRevision.value++)
+  // VS Code names the views in its own language; these follow `x18n.language`, whose switch bumps `revision`.
+  watch(revision, () => {
+    currentFile.view.title = l10n.t('Current File')
+    progress.view.title = l10n.t('Progress')
+    keys.view.title = l10n.t('Keys')
+    usageReport.view.title = l10n.t('Usage Report')
+    reviews.view.title = l10n.t('Reviews')
+  }, { immediate: true })
 }
