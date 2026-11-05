@@ -4,6 +4,7 @@
   "command.openUi": "UI 열기",
   "command.openKey": "UI에서 키 열기",
   "command.setDisplayLocale": "표시 로케일 설정",
+  "command.setLanguage": "언어 설정",
   "command.editKey": "메시지 편집",
   "command.renameKeyPrefix": "키 접두사 이름 바꾸기",
   "command.deleteKey": "키 삭제",

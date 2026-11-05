@@ -4,6 +4,7 @@
   "command.openUi": "UI öffnen",
   "command.openKey": "Schlüssel in der UI öffnen",
   "command.setDisplayLocale": "Anzeigesprache festlegen",
+  "command.setLanguage": "Sprache festlegen",
   "command.editKey": "Text bearbeiten",
   "command.renameKeyPrefix": "Schlüsselpräfix umbenennen",
   "command.deleteKey": "Schlüssel löschen",

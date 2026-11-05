@@ -70,6 +70,11 @@
         "icon": "$(globe)"
       },
       {
+        "command": "x18n.setLanguage",
+        "title": "%command.setLanguage%",
+        "category": "x18n"
+      },
+      {
         "command": "x18n.editKey",
         "title": "%command.editKey%",
         "category": "x18n",
@@ -240,6 +245,11 @@
           "command": "x18n.setDisplayLocale",
           "when": "view =~ /^x18n\\./",
           "group": "navigation"
+        },
+        {
+          "command": "x18n.setLanguage",
+          "when": "view =~ /^x18n\\./",
+          "group": "x18n@1"
         }
       ],
       "view/item/context": [

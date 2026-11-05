@@ -4,6 +4,7 @@
   "command.openUi": "Arayüzü aç",
   "command.openKey": "Anahtarı arayüzde aç",
   "command.setDisplayLocale": "Görüntüleme yerel ayarını seç",
+  "command.setLanguage": "Dili ayarla",
   "command.editKey": "Mesajı düzenle",
   "command.renameKeyPrefix": "Anahtar önekini yeniden adlandır",
   "command.deleteKey": "Anahtarı sil",

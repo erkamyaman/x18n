@@ -3,6 +3,7 @@ import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { afterEach, describe, expect, it } from 'vitest'
 import { bundleTranslator, format, l10n, setTranslator } from '../src/model/l10n'
+import { languages } from '../src/model/languages'
 import { reviewItems, usageReportItems } from '../src/model/tree'
 
 const root = fileURLToPath(new URL('../', import.meta.url))
@@ -137,11 +138,13 @@ describe('translations', () => {
     }
   })
 
-  it('offers every shipped locale, and English, in x18n.language', async () => {
+  it('offers every shipped locale, and English, in x18n.language and its picker', async () => {
     const manifest: { contributes: { configuration: { properties: Record<string, { enum: string[], enumItemLabels: string[] }> } } } = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'))
     const setting = manifest.contributes.configuration.properties['x18n.language']!
     expect(setting.enum).toEqual(['', 'en', ...locales])
-    expect(setting.enumItemLabels).toHaveLength(setting.enum.length)
+    // The Set Language picker lists the same languages, by the same names.
+    expect(languages.map(l => l.code)).toEqual(setting.enum.slice(1))
+    expect(languages.map(l => l.name)).toEqual(setting.enumItemLabels.slice(1))
   })
 
   it('ships no other locale', async () => {

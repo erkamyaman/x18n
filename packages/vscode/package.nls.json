@@ -4,6 +4,7 @@
   "command.openUi": "Open UI",
   "command.openKey": "Open Key in UI",
   "command.setDisplayLocale": "Set Display Locale",
+  "command.setLanguage": "Set Language",
   "command.editKey": "Edit Message",
   "command.renameKeyPrefix": "Rename Key Prefix",
   "command.deleteKey": "Delete Key",

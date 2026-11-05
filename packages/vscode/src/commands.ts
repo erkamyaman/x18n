@@ -12,6 +12,7 @@ import { commands } from './generated/meta'
 import { migratableFolders, migrate } from './migrate'
 import { isKeyRef, projectFor } from './model/client'
 import { l10n } from './model/l10n'
+import { languages } from './model/languages'
 import { adjacentRange } from './model/locations'
 
 interface CommandDeps {
@@ -60,6 +61,16 @@ async function openMatch(match: SearchMatch): Promise<void> {
     : targets[0]
   if (picked)
     await open(picked)
+}
+
+/** A quick pick description, with ` · current` added on the picked option. */
+function markCurrent(isCurrent: boolean, description: string): string {
+  return isCurrent
+    ? [
+        description,
+        l10n.t('current'),
+      ].filter(Boolean).join(' · ')
+    : description
 }
 
 async function localeItem(locale: ProjectInfo['locales'][number]): Promise<{ label: string, code: string, iconPath?: Uri }> {
@@ -196,6 +207,28 @@ export function useCommands({ client, x18n, openUi, displayLocale }: CommandDeps
       await search(pick.value)
   })
 
+  register(commands.setLanguage, async () => {
+    const current = config.language ?? ''
+    const marked = (code: string, description: string): string => markCurrent(code === current, description)
+    const picked = await window.showQuickPick([
+      {
+        label: l10n.t('Same as VS Code'),
+        description: marked('', ''),
+        code: '',
+      },
+      ...languages.map(l => ({
+        label: l.name,
+        description: marked(l.code, l.code),
+        code: l.code,
+      })),
+    ], {
+      placeHolder: l10n.t('Language of x18n\'s views, pickers and messages'),
+    })
+    // A user setting: the language is the person's, not the project's. `language.ts` applies it.
+    if (picked && picked.code !== current)
+      await config.update('language', picked.code, ConfigurationTarget.Global)
+  })
+
   register(commands.setDisplayLocale, async () => {
     const projects = await x18n.request('x18n/projects', undefined)
     const locales = [
@@ -203,12 +236,7 @@ export function useCommands({ client, x18n, openUi, displayLocale }: CommandDeps
     ]
     const sourceLocales = projects.map(p => p.sourceLocale).join(', ')
     const current = displayLocale.picked.value
-    const marked = (code: string | undefined, description: string): string => code === current
-      ? [
-          description,
-          l10n.t('current'),
-        ].filter(Boolean).join(' · ')
-      : description
+    const marked = (code: string | undefined, description: string): string => markCurrent(code === current, description)
     const picked = await window.showQuickPick([
       {
         label: l10n.t('Default'),

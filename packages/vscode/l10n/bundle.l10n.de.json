@@ -69,5 +69,7 @@
   "x18n: type the suggested value first.": "x18n: bitte zuerst den vorgeschlagenen Wert eingeben.",
   "x18n: write {0}?": "x18n: {0} schreiben?",
   "x18n: {0} has i18n-ally settings and no x18n config.": "x18n: {0} hat i18n-ally-Einstellungen und keine x18n-Konfiguration.",
-  "{0} · {1} translated": "{0} · {1} übersetzt"
+  "{0} · {1} translated": "{0} · {1} übersetzt",
+  "Same as VS Code": "Wie VS Code",
+  "Language of x18n's views, pickers and messages": "Sprache der Ansichten, Auswahllisten und Meldungen von x18n"
 }

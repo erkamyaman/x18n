@@ -4,6 +4,7 @@
   "command.openUi": "UI を開く",
   "command.openKey": "キーを UI で開く",
   "command.setDisplayLocale": "表示ロケールを設定",
+  "command.setLanguage": "言語を設定",
   "command.editKey": "メッセージを編集",
   "command.renameKeyPrefix": "キーのプレフィックスの名前を変更",
   "command.deleteKey": "キーを削除",

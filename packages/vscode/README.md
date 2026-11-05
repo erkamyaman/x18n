@@ -31,6 +31,7 @@ Project settings live in `x18n.config.ts`; the settings below only change the ed
 | `x18n.openUi`                | x18n: Open UI                |
 | `x18n.openKey`               | x18n: Open Key in UI               |
 | `x18n.setDisplayLocale`      | x18n: Set Display Locale      |
+| `x18n.setLanguage`           | x18n: Set Language           |
 | `x18n.editKey`               | x18n: Edit Message               |
 | `x18n.renameKeyPrefix`       | x18n: Rename Key Prefix       |
 | `x18n.deleteKey`             | x18n: Delete Key             |

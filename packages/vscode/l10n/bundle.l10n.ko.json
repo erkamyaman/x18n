@@ -69,5 +69,7 @@
   "x18n: type the suggested value first.": "x18n: 먼저 제안 값을 입력하세요.",
   "x18n: write {0}?": "x18n: {0}을(를) 쓸까요?",
   "x18n: {0} has i18n-ally settings and no x18n config.": "x18n: {0}에 i18n-ally 설정이 있고 x18n 설정이 없습니다.",
-  "{0} · {1} translated": "{0} · {1} 번역됨"
+  "{0} · {1} translated": "{0} · {1} 번역됨",
+  "Same as VS Code": "VS Code와 동일",
+  "Language of x18n's views, pickers and messages": "x18n의 뷰, 선택기, 메시지 언어"
 }
