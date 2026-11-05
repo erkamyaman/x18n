@@ -3,7 +3,7 @@ import type { Annotations } from './annotations'
 import type { X18nClient } from './model/client'
 import { methods } from '@x18n/lsp'
 import { computed, defineExtension, shallowRef, useActiveTextEditor, useDisposable, useEventEmitter, useStatusBarItem, watch } from 'reactive-vscode'
-import { env, StatusBarAlignment, window, workspace } from 'vscode'
+import { StatusBarAlignment, window, workspace } from 'vscode'
 import { State } from 'vscode-languageclient/node'
 import { useAnnotations } from './annotations'
 import { createClient } from './client'
@@ -140,24 +140,9 @@ const { activate, deactivate } = defineExtension((context): X18nExtensionApi => 
       : l10n.t('x18n display locale'),
     command: commands.setDisplayLocale,
   })
-  // Next to the display locale: the language of x18n itself (`x18n.language`, else VS Code's), which opens the picker.
-  const languageStatus = useStatusBarItem({
-    id: 'x18n.language',
-    alignment: StatusBarAlignment.Right,
-    text: () => `$(whole-word) ${(config.language || env.language).toUpperCase()}`,
-    tooltip: () => config.language === undefined
-      ? ''
-      : l10n.t('x18n language'),
-    command: commands.setLanguage,
-  })
-  watch(current, (value) => {
-    for (const item of [status, languageStatus]) {
-      if (value)
-        item.show()
-      else
-        item.hide()
-    }
-  }, { immediate: true })
+  watch(current, value => value
+    ? status.show()
+    : status.hide(), { immediate: true })
 
   async function offerMigration(): Promise<void> {
     const [folder] = await migratableFolders()
