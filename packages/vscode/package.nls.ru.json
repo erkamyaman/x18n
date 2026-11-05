@@ -4,7 +4,7 @@
   "command.openUi": "Открыть UI",
   "command.openKey": "Открыть ключ в UI",
   "command.setDisplayLocale": "Выбрать локаль отображения",
-  "command.setLanguage": "Выбрать язык",
+  "command.setLanguage": "Выбрать язык интерфейса расширения",
   "command.editKey": "Изменить сообщение",
   "command.renameKeyPrefix": "Переименовать префикс ключа",
   "command.deleteKey": "Удалить ключ",

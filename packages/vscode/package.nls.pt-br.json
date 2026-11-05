@@ -4,7 +4,7 @@
   "command.openUi": "Abrir a UI",
   "command.openKey": "Abrir chave na UI",
   "command.setDisplayLocale": "Definir idioma de exibição",
-  "command.setLanguage": "Definir idioma",
+  "command.setLanguage": "Definir o idioma da interface da extensão",
   "command.editKey": "Editar mensagem",
   "command.renameKeyPrefix": "Renomear prefixo de chave",
   "command.deleteKey": "Excluir chave",

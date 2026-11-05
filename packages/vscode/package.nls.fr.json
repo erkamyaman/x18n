@@ -4,7 +4,7 @@
   "command.openUi": "Ouvrir l’UI",
   "command.openKey": "Ouvrir la clé dans l’UI",
   "command.setDisplayLocale": "Choisir la langue d’affichage",
-  "command.setLanguage": "Définir la langue",
+  "command.setLanguage": "Définir la langue de l'interface de l'extension",
   "command.editKey": "Modifier le message",
   "command.renameKeyPrefix": "Renommer le préfixe de clé",
   "command.deleteKey": "Supprimer la clé",

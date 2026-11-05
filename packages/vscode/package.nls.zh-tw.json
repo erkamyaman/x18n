@@ -4,7 +4,7 @@
   "command.openUi": "開啟 UI",
   "command.openKey": "在 UI 中開啟鍵",
   "command.setDisplayLocale": "設定顯示語系",
-  "command.setLanguage": "設定語言",
+  "command.setLanguage": "設定擴充功能介面語言",
   "command.editKey": "編輯訊息",
   "command.renameKeyPrefix": "重新命名鍵前綴",
   "command.deleteKey": "刪除鍵",
